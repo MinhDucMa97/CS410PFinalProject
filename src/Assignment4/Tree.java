@@ -4,6 +4,7 @@
 //Tree implementation
 
 package Assignment4;
+
 import java.util.*;
 import java.io.*;
 import java.util.Scanner;
@@ -44,10 +45,12 @@ public class Tree {
             readFile();
         }
     }
+
     //close file after done reading
     public void closeFile() {
         scanner.close();
     }
+
     //return the height of the tree
     public int height() {
         if (root == null) {
@@ -150,8 +153,7 @@ public class Tree {
         if (root == null || root.service.name.compareTo(type) == 0) {
             root.addListNode(serviceName, providerName, description, price);
             return root;
-        }
-        else if (root.service.name.compareTo(type) < 0) {
+        } else if (root.service.name.compareTo(type) < 0) {
             return addService_List(root.getRight(), type, serviceName, providerName, description, price);
         }
         return addService_List(root.getLeft(), type, serviceName, providerName, description, price);
@@ -194,66 +196,61 @@ public class Tree {
     }
 
 
-
     //Remove all in a tree node
-    public void removeAllList(String type){
-        removeAllList(this.root,type);
+    public void removeAllList(String type) {
+        removeAllList(this.root, type);
     }
 
-    public void removeAllList(Tree_Node root, String type){
-        if(root == null)
+    public void removeAllList(Tree_Node root, String type) {
+        if (root == null)
             return;
-        else if(root.service.name.compareTo(type) < 0){
+        else if (root.service.name.compareTo(type) < 0) {
             removeAllList(root.right, type);
-        }
-        else if(root.service.name.compareTo(type) > 0){
-            removeAllList(root.left,type);
-        }
-        else if(root.service.name.compareTo(type) == 0){
+        } else if (root.service.name.compareTo(type) > 0) {
+            removeAllList(root.left, type);
+        } else if (root.service.name.compareTo(type) == 0) {
             System.out.println("Service Type:" + root.service.name);
             root.removeAll_List();
         }
     }
 
     //Remove a linked list node
-    public void removeListNode(String type, String serviceName, String providerName){
-        removeListNode(this.root,type,serviceName,providerName);
+    public void removeListNode(String type, String serviceName, String providerName) {
+        removeListNode(this.root, type, serviceName, providerName);
     }
 
-    public  void removeListNode(Tree_Node root, String type, String serviceName, String providerName){
-        if(root == null){
+    public void removeListNode(Tree_Node root, String type, String serviceName, String providerName) {
+        if (root == null) {
             return;
         }
-        if(root.service.name.compareTo(type) < 0){
-            removeListNode(root.right,type,serviceName,providerName);
-        }
-        else if(root.service.name.compareTo(type) > 0){
-            removeListNode(root.left,type,serviceName,providerName);
-        }
-        else if(root.service.name.compareTo(type) == 0 ){
-            System.out.println("Type" + type );
-            root.removeNode_List(serviceName,providerName);
+        if (root.service.name.compareTo(type) < 0) {
+            removeListNode(root.right, type, serviceName, providerName);
+        } else if (root.service.name.compareTo(type) > 0) {
+            removeListNode(root.left, type, serviceName, providerName);
+        } else if (root.service.name.compareTo(type) == 0) {
+            System.out.println("Type" + type);
+            root.removeNode_List(serviceName, providerName);
             //root.deleteNode(serviceName,providerName);
         }
 
     }
 
-    public void Retrieve(String type,String serviceName, String providerName, String description, String price){
-        Retrieve(root,type,serviceName,providerName,description,price);
+    public void Retrieve(String type, String serviceName, String providerName, String description, String price) {
+        Retrieve(root, type, serviceName, providerName, description, price);
     }
 
-    public void Retrieve(Tree_Node root,String type, String serviceName, String providerName, String description, String price){
-        if(root == null){
+    public void Retrieve(Tree_Node root, String type, String serviceName, String providerName, String description, String price) {
+        if (root == null) {
             System.out.println("Nothing can display. No data was recorded");
             return;
         }
-        if(root.service.name.compareTo(type) < 0)
-            Retrieve(root.right,type,serviceName,providerName,description,price);
-        else if(root.service.name.compareTo(type) > 0)
-            Retrieve(root.left,type,serviceName,providerName,description,price);
-        else if(root.service.name.compareTo(type) == 0)
+        if (root.service.name.compareTo(type) < 0)
+            Retrieve(root.right, type, serviceName, providerName, description, price);
+        else if (root.service.name.compareTo(type) > 0)
+            Retrieve(root.left, type, serviceName, providerName, description, price);
+        else if (root.service.name.compareTo(type) == 0)
             System.out.print("Type " + type + "\n");
-            root.researchList(serviceName,providerName,description,price);
+        root.researchList(serviceName, providerName, description, price);
 
     }
 }
