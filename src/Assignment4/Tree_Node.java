@@ -106,16 +106,16 @@ public class Tree_Node {
         researchList(head, serviceName, providerName, description, price);
     }
 
-    public void researchList(List_Node head, String SserviceName, String SproviderName, String Sdescription, String Sprice) {
+    public void researchList(List_Node head, String DesireServiceName, String DesireProviderName, String DesireDescription, String DesirePrice) {
         if (head == null) {
             return;
         }
-        if (head.serviceName.compareTo(SserviceName) == 0 && head.providerName.compareTo(SproviderName) == 0
-                && head.description.compareTo(Sdescription) == 0 && head.price.compareTo(Sprice) == 0) {
+        if (head.serviceName.compareTo(DesireServiceName) == 0 && head.providerName.compareTo(DesireProviderName) == 0
+                && head.description.compareTo(DesireDescription) == 0 && head.price.compareTo(DesirePrice) == 0) {
             head.displayElement();
 
         } else {
-            researchList(head.next, SserviceName, SproviderName, Sdescription, Sprice);
+            researchList(head.next, DesireServiceName, DesireProviderName, DesireDescription, DesirePrice);
         }
 
     }
