@@ -143,12 +143,7 @@ public class Tree {
         node.right = rightRotate(node.right);
         return leftRotate(node);
     }
-
-    /*
-        public void addService_List(String type, String serviceName, String providerName, String description, String price){
-            this.root = addService_List(this.root, type,serviceName,providerName,description,price);
-        }
-    */
+    
     public Tree_Node addService_List(Tree_Node root, String type, String serviceName, String providerName, String description, String price) {
         if (root == null || root.service.name.compareTo(type) == 0) {
             root.addListNode(serviceName, providerName, description, price);
