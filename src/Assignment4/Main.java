@@ -85,7 +85,7 @@ public class Main {
                 System.out.print("Enter the service title: ");
                 String tTitile = scanner.nextLine();
 
-                System.out.print("Enter the your name as a provider of the service: ");
+                System.out.print("Enter the name as a provider of the service: ");
                 String tProvider = scanner.nextLine();
 
                 System.out.print("Enter the description of the service: ");

@@ -152,7 +152,11 @@ public class Tree {
         node.right = rightRotate(node.right);
         return leftRotate(node);
     }
-    
+
+    //Adding a new service into the existing serivce list
+    //If the service is already exist, we will add the new
+    //service in an ap alphabetical order. Otherwise, if there
+    //are no service name found, a new list will be added.
     public Tree_Node addService_List(Tree_Node root,
                                      String type,
                                      String serviceName,
@@ -246,11 +250,12 @@ public class Tree {
         } else if (root.service.name.compareTo(type) == 0) {
             System.out.println("Type" + type);
             root.removeNode_List(serviceName, providerName);
-            //root.deleteNode(serviceName,providerName);
+
         }
 
     }
 
+    //Retrive approriate data based on the information inputed by the users.
     public void Retrieve(String type,
                          String serviceName,
                          String providerName,

@@ -13,7 +13,8 @@ public class List_Node {
     protected String description;
     protected List_Node next;
 
-
+    //This function will created node for the linked list
+    //which contains all the needed information of a service
     public List_Node(String serviceName,
                      String providerName,
                      String description,

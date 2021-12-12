@@ -15,6 +15,9 @@ public class Tree_Node {
     protected Tree_Node left;
     protected Tree_Node right;
 
+    //This function will create a node that contains all the
+    //essential elements for a tree node. When the function
+    //is called, a new node will be created.
     public Tree_Node(String type,
                      String serviceName,
                      String providerName,
@@ -34,11 +37,12 @@ public class Tree_Node {
         this.height = 0;
     }
 
+    //Return a left branch of the tree
     public Tree_Node getLeft() {
         return left;
     }
 
-
+    //Return a right branhc of the tree
     public Tree_Node getRight() {
         return right;
     }
@@ -85,7 +89,7 @@ public class Tree_Node {
         }
     }
 
-    //remove all node in the list
+    //remove all node in the list based on the name of the serivce and provider which will be provided from user's inputs
     public void removeAll_List() {
         head = null;
     }
@@ -121,6 +125,9 @@ public class Tree_Node {
 
     }
 
+    //The functionality of this function is to display the list of service that are compatible to
+    //the input of the users in term of name of service and provider, descrpition
+    // of the service, and the price for that serivce
     public void researchList(String serviceName,
                              String providerName,
                              String description,
