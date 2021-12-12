@@ -14,7 +14,10 @@ public class List_Node {
     protected List_Node next;
 
 
-    public List_Node(String serviceName,String providerName, String description, String price) {
+    public List_Node(String serviceName,
+                     String providerName,
+                     String description,
+                     String price) {
         this.serviceName = serviceName;
         this.providerName = providerName;
         this.price = price;
@@ -24,7 +27,10 @@ public class List_Node {
 
     //Display all data within a node of a list
     public void displayElement(){
-        System.out.print("Type of service: " + serviceName + ", Provider Name: " + providerName + ", Description: " + description + ", Price: " + price+ "\n");
+        System.out.print("Type of service: " + serviceName +
+                ", Provider Name: " + providerName +
+                ", Description: " + description +
+                ", Price: " + price+ "\n");
     }
 }
 

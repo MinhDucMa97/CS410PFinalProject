@@ -60,7 +60,11 @@ public class Tree {
     }
 
     // add new type(node) into the tree
-    public void addTree(String type, String serviceName, String providerName, String description, String price) {
+    public void addTree(String type,
+                        String serviceName,
+                        String providerName,
+                        String description,
+                        String price) {
         Tree_Node newNode = new Tree_Node(type, serviceName, providerName, description, price);
         if (root == null) {
             root = newNode;
@@ -71,8 +75,13 @@ public class Tree {
         size++;
     }
 
-    public Tree_Node addTree(Tree_Node root, Tree_Node newNode, String type,
-                             String serviceName, String providerName, String description, String price) {
+    public Tree_Node addTree(Tree_Node root,
+                             Tree_Node newNode,
+                             String type,
+                             String serviceName,
+                             String providerName,
+                             String description,
+                             String price) {
 
         if (root == null) {
             return newNode;
@@ -144,7 +153,12 @@ public class Tree {
         return leftRotate(node);
     }
     
-    public Tree_Node addService_List(Tree_Node root, String type, String serviceName, String providerName, String description, String price) {
+    public Tree_Node addService_List(Tree_Node root,
+                                     String type,
+                                     String serviceName,
+                                     String providerName,
+                                     String description,
+                                     String price) {
         if (root == null || root.service.name.compareTo(type) == 0) {
             root.addListNode(serviceName, providerName, description, price);
             return root;
@@ -178,7 +192,8 @@ public class Tree {
         displayOne(this.root, serviceType);
     }
 
-    public void displayOne(Tree_Node root, String serviceType) {
+    public void displayOne(Tree_Node root,
+                           String serviceType) {
         if (root == null) {
             return;
         } else if (root.service.name.compareTo(serviceType) < 0) {
@@ -196,7 +211,8 @@ public class Tree {
         removeAllList(this.root, type);
     }
 
-    public void removeAllList(Tree_Node root, String type) {
+    public void removeAllList(Tree_Node root,
+                              String type) {
         if (root == null)
             return;
         else if (root.service.name.compareTo(type) < 0) {
@@ -210,11 +226,16 @@ public class Tree {
     }
 
     //Remove a linked list node
-    public void removeListNode(String type, String serviceName, String providerName) {
+    public void removeListNode(String type,
+                               String serviceName,
+                               String providerName) {
         removeListNode(this.root, type, serviceName, providerName);
     }
 
-    public void removeListNode(Tree_Node root, String type, String serviceName, String providerName) {
+    public void removeListNode(Tree_Node root,
+                               String type,
+                               String serviceName,
+                               String providerName) {
         if (root == null) {
             return;
         }
@@ -230,11 +251,20 @@ public class Tree {
 
     }
 
-    public void Retrieve(String type, String serviceName, String providerName, String description, String price) {
+    public void Retrieve(String type,
+                         String serviceName,
+                         String providerName,
+                         String description,
+                         String price) {
         Retrieve(root, type, serviceName, providerName, description, price);
     }
 
-    public void Retrieve(Tree_Node root, String type, String serviceName, String providerName, String description, String price) {
+    public void Retrieve(Tree_Node root,
+                         String type,
+                         String serviceName,
+                         String providerName,
+                         String description,
+                         String price) {
         if (root == null) {
             System.out.println("Nothing can display. No data was recorded");
             return;
